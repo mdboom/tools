@@ -220,7 +220,7 @@ class JobsFS(_utils.FSTree):
 
     @classmethod
     def from_user(cls, user):
-        return cls(f'/home/{user}/BENCH')
+        return cls(f'~{user}/BENCH')
 
     @classmethod
     def from_raw(cls, raw):
