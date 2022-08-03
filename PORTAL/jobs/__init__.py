@@ -39,8 +39,6 @@ class JobsConfig(_utils.TopConfig):
             raise ValueError('missing local_user')
         if not workers:
             raise ValueError('missing workers')
-        if not isinstance(workers, _workers.WorkersConfig):
-            workers = _workers.WorkersConfig.from_jsonable(workers)
         for worker_name, worker in workers.items():
             if not isinstance(worker, _workers.WorkerConfig):
                 workers[worker_name] = _workers.WorkerConfig.from_jsonable(worker)
